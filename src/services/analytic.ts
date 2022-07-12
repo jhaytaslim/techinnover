@@ -1,18 +1,8 @@
 import mongoose from 'mongoose'
-import { convertObjectToArray, encryptPassword, getNextSequenceValue, SuggestWords } from '../utils'
-import {
-  BadWord,
-  badWords,
-  Result,
-  users,
-  CreateUserReq,
-  CreateUserRes
-} from '../utils/data'
-import config from 'config'
+import {  getNextSequenceValue } from '../utils'
 import Analytic from '../models/analytic'
 import moment from 'moment'
 import { WINDOW, windowOptions } from '../utils/constants'
-import Counter from '../models/counter'
 
 class UserService {
   /**
