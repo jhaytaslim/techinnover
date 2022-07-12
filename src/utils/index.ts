@@ -3,9 +3,8 @@ import Counter from '../models/counter'
 const JsonResponse = (
   res: any,
   status: number,
-  msg: string,
-  data: any = null,
-  meta: any = null
+
+  data: any = null
 ) => {
   let body: any = {
     data: null,

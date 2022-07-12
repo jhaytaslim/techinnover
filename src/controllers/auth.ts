@@ -27,11 +27,10 @@ router.post('/analytics', async (req, res, next) => {
       return JsonResponse(res, 400, 'username invalid')
     }
 
-    return JsonResponse(res, 201, `Analytics added successfully`, {
+    return JsonResponse(res, 201, {
       ingested: result.length
     })
   } catch (err) {
-    console.log('err: ', err)
     return JsonResponse(res, err.code || 500, err.msg || 'Server Error')
   }
 })
@@ -45,9 +44,8 @@ router.get('/analytics', async (req, res, next) => {
 
     let result = await userService.find({}, req.query)
 
-    return JsonResponse(res, 201, `Analytics retrieved successfully`, result)
+    return JsonResponse(res, 200, result)
   } catch (err) {
-    console.log('err: ', err)
     return JsonResponse(res, err.code || 500, err.msg || 'Server Error')
   }
 })
@@ -63,9 +61,8 @@ router.get('/analytics/:user', async (req, res, next) => {
 
     let result = await userService.find(params, req.query)
 
-    return JsonResponse(res, 200, `Analytics retrieved successfully`, result)
+    return JsonResponse(res, 200, result)
   } catch (err) {
-    console.log('err: ', err)
     return JsonResponse(res, err.code || 500, err.msg || 'Server Error')
   }
 })
