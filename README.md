@@ -5,7 +5,7 @@
 * yarn start
 
 ## Documentation
-* https://documenter.getpostman.com/view/18950464/UzBsHPoghguM
+* https://documenter.getpostman.com/view/18950464/UzJSKDtu
 
 ## Contributors
 * [Taslim ADIATU](https://github.com/jhaytaslim)
