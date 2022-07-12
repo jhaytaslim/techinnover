@@ -1,11 +1,11 @@
-# Zikiway
+# Techinnover
 
 ## Setup 
 * yarn install
 * yarn start
 
 ## Documentation
-* https://documenter.getpostman.com/view/18950464/UzBsHPoM
+* https://documenter.getpostman.com/view/18950464/UzBsHPoghguM
 
 ## Contributors
 * [Taslim ADIATU](https://github.com/jhaytaslim)
