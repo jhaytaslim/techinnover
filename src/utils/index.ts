@@ -101,18 +101,18 @@ async function getNextSequenceValue (
   sequenceName: string,
   increment: boolean = true
 ) {
-  var sequenceDocument = await Counter.findOneAndUpdate(
-    { _id: sequenceName },
-    {
-      $inc: { count: increment ? 1 : -1 }
-    },
-    { returnDocument: 'after' }
-  )
-  const ret = await Counter.findOne({ _id: sequenceName }).lean()
-  console.log('seq: ', sequenceName, ret)
-  return ret?.sequence_value //.sequence_value;
-}
+   const filter = { _id: sequenceName }
+  const update = {
+    $inc: { sequence_value: 1 }
+  }
 
+  let doc = await Counter.findOneAndUpdate(filter, update, {
+    new: true,
+    upsert: true
+  })
+
+  return doc?.sequence_value 
+}
 
 export {
   JsonResponse,
